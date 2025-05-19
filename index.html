@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solutions d'Aubin & GPT</title>
+  <title>Solutions d'Aubin</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
     header { background: #222; color: white; padding: 1rem; text-align: center; }
-    nav { background: #444; padding: 0.5rem; display: flex; justify-content: center; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+    nav { background: #444; padding: 0.5rem; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { color: white; margin: 0.5rem 1rem; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
     .content { padding: 2rem; }
     section { display: none; }
     section.active { display: block; }
+    pre { background: #eee; padding: 1rem; overflow-x: auto; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Solutions d'Aubin & GPT</h1>
+    <h1>Solutions d'Aubin</h1>
     <p>Réponses et astuces sur GMod, Xbox, et plus</p>
   </header>
 
@@ -32,27 +33,49 @@
   <div class="content">
     <section id="gmod" class="active">
       <h2>Garry's Mod</h2>
-      <p>Exemples : Résoudre un bug ULX, créer un addon simple, sauvegarder en JSON...</p>
+      <ul>
+        <li><strong>🔧 Sauvegarde JSON pour DarkRP</strong><br/>Utilisez ce format pour enregistrer les données en JSON si SQL bug :
+          <pre>{"steamid": "STEAM_0:0:123456", "cases": [1, 2, 3]}</pre>
+        </li>
+        <li><strong>📦 Créer un addon simple</strong><br/>Structure typique :
+          <pre>myaddon/
+├── lua/
+│   └── autorun/
+│       └── myaddon_init.lua
+└── addon.txt</pre>
+        </li>
+        <li><strong>👮‍♂️ ULX ne fonctionne pas</strong><br/>Assurez-vous que le dossier `ulx` est dans `garrysmod/addons/` et que le fichier `ulx.lua` est bien lu.</li>
+      </ul>
     </section>
 
     <section id="xbox">
       <h2>Xbox</h2>
-      <p>Exemples : Résoudre un problème de connexion, comprendre le Game Pass, etc.</p>
+      <ul>
+        <li><strong>🌐 Problèmes de connexion Xbox Live</strong><br/>Redémarre ta box, puis va dans les paramètres réseau et utilise "Test de connexion" pour voir les erreurs exactes.</li>
+        <li><strong>🧾 Résilier un abonnement Game Pass</strong><br/>Va sur <a href="https://account.microsoft.com/services">account.microsoft.com/services</a> et clique sur "Gérer" à côté de l'abonnement.</li>
+      </ul>
     </section>
 
     <section id="autres">
       <h2>Autres Problèmes</h2>
-      <p>Exemples : Bugs Windows, logiciels, conseils logiciels gratuits, etc.</p>
+      <ul>
+        <li><strong>🪟 Réparer une application qui crash sur Windows</strong><br/>Ouvre les paramètres > Applications > clique sur l’app > Options avancées > Réparer.</li>
+        <li><strong>📁 Afficher les extensions de fichiers</strong><br/>Explorateur de fichiers > Affichage > cocher "Extensions de noms de fichiers".</li>
+      </ul>
     </section>
 
     <section id="outils">
       <h2>Outils & Astuces</h2>
-      <p>Petits outils, recommandations d'apps, configs utiles.</p>
+      <ul>
+        <li><strong>📹 Clipchamp gratuit</strong><br/>Outil de montage vidéo simple et en ligne. Parfait pour YouTube sans watermark en 720p.</li>
+        <li><strong>🧪 Notepad++</strong><br/>Éditeur de code ultra léger, pratique pour modifier des fichiers `.lua` ou `.json`.</li>
+        <li><strong>🌐 OBS Studio</strong><br/>Logiciel gratuit pour enregistrer ou streamer. Très utile pour Twitch.</li>
+      </ul>
     </section>
 
     <section id="credits">
       <h2>À propos</h2>
-      <p>Site créé par Aubin avec l'aide de ChatGPT. Libre à partager et compléter !</p>
+      <p>Ce site est maintenu par <strong>Aubin</strong>. Il compile des solutions pratiques données avec l'aide de <strong>ChatGPT</strong>, une IA développée par OpenAI. N'hésitez pas à réutiliser ou partager le contenu !</p>
     </section>
   </div>
 
