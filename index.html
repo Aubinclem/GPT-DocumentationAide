@@ -8,8 +8,10 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
       color: #fff;
     }
     header {
@@ -56,6 +58,18 @@
     a {
       color: #8cf;
     }
+    .update-info {
+      background: rgba(0,0,0,0.7);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .tool-image {
+      max-width: 120px;
+      margin: 0.5rem 0;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -63,6 +77,10 @@
     <h1>Solutions d'Aubin & GPT</h1>
     <p>Réponses et astuces sur GMod, Xbox, et plus</p>
   </header>
+
+  <div class="update-info">
+    📅 Dernière mise à jour : 19 mai 2025 à 17h15
+  </div>
 
   <nav>
     <a href="#" onclick="showTab('gmod')">🔧 GMod</a>
@@ -99,6 +117,17 @@
         <li><strong>🧾 Résilier un abonnement Game Pass</strong><br/>Va sur <a href="https://account.microsoft.com/services">account.microsoft.com/services</a> et clique sur "Gérer" à côté de l'abonnement.</li>
         <li><strong>🎮 Partage de jeux entre comptes</strong><br/>Utilise la fonction "Xbox principale" pour partager tes jeux et abonnements avec un deuxième compte sur la même console.</li>
         <li><strong>🕹️ Manette non détectée</strong><br/>Vérifie les piles, réinitialise la manette (bouton à l’arrière), puis reconnecte-la via USB ou sans fil.</li>
+        <li><strong>🧹 Problèmes avec Gaming Services (Game Pass PC)</strong><br/>Si les jeux ne se lancent pas ou ne s’installent plus via le Microsoft Store ou le Xbox Game Pass :
+          <ol>
+            <li>Désinstalle "Gaming Services" :</li>
+            <li>Ouvre PowerShell en administrateur</li>
+            <li>Commande : <code>get-appxpackage Microsoft.GamingServices | remove-AppxPackage -allusers</code></li>
+            <li>Supprime la clé de registre : <code>remove-Item -Path "HKLM:\System\CurrentControlSet\Services\GamingServices" -Recurse</code></li>
+            <li>Redémarre le PC</li>
+            <li>Réinstalle Gaming Services via Microsoft Store</li>
+            <li>Réinitialise aussi le Microsoft Store si nécessaire (via wsreset.exe)</li>
+          </ol>
+        </li>
       </ul>
     </section>
 
@@ -115,11 +144,21 @@
     <section id="outils">
       <h2>Outils & Astuces</h2>
       <ul>
-        <li><strong>📹 Clipchamp gratuit</strong><br/>Outil de montage vidéo simple et en ligne. Parfait pour YouTube sans watermark en 720p.</li>
-        <li><strong>🧪 Notepad++</strong><br/>Éditeur de code ultra léger, pratique pour modifier des fichiers `.lua` ou `.json`.</li>
-        <li><strong>🌐 OBS Studio</strong><br/>Logiciel gratuit pour enregistrer ou streamer. Très utile pour Twitch.</li>
-        <li><strong>🔤 ShareX</strong><br/>Capture d'écran avancée, très utile pour documenter ses bugs ou créer des tutos.</li>
-        <li><strong>📂 FileZilla</strong><br/>Client FTP pour gérer les fichiers de ton serveur (pratique pour GMod).</li>
+        <li><strong>📹 Clipchamp gratuit</strong><br/>Outil de montage vidéo simple et en ligne. Parfait pour YouTube sans watermark en 720p.<br/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Clipchamp_logo.png" alt="Clipchamp Logo" class="tool-image"/>
+        </li>
+        <li><strong>🧪 Notepad++</strong><br/>Éditeur de code ultra léger, pratique pour modifier des fichiers `.lua` ou `.json`.<br/>
+          <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Notepad++_logo.png" alt="Notepad++ Logo" class="tool-image"/>
+        </li>
+        <li><strong>🌐 OBS Studio</strong><br/>Logiciel gratuit pour enregistrer ou streamer. Très utile pour Twitch.<br/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/OBS_Studio_Logo.svg" alt="OBS Studio Logo" class="tool-image"/>
+        </li>
+        <li><strong>🔤 ShareX</strong><br/>Capture d'écran avancée, très utile pour documenter ses bugs ou créer des tutos.<br/>
+          <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/ShareX_Logo.png" alt="ShareX Logo" class="tool-image"/>
+        </li>
+        <li><strong>📂 FileZilla</strong><br/>Client FTP pour gérer les fichiers de ton serveur (pratique pour GMod).<br/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/FileZilla_logo.png/600px-FileZilla_logo.png" alt="FileZilla Logo" class="tool-image"/>
+        </li>
       </ul>
     </section>
 
@@ -130,6 +169,16 @@
   </div>
 
   <script>
+    const backgrounds = [
+      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1950&q=80',
+      'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1950&q=80',
+      'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1950&q=80',
+      'https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80',
+      'https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1950&q=80'
+    ];
+
+    document.body.style.backgroundImage = `url('${backgrounds[Math.floor(Math.random() * backgrounds.length)]}')`;
+
     function showTab(id) {
       document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
