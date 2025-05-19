@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions d'Aubin & GPT</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background: #222; color: white; padding: 1rem; text-align: center; }
+    nav { background: #444; padding: 0.5rem; display: flex; justify-content: center; }
+    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .content { padding: 2rem; }
+    section { display: none; }
+    section.active { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Solutions d'Aubin & GPT</h1>
+    <p>Réponses et astuces sur GMod, Xbox, et plus</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showTab('gmod')">GMod</a>
+    <a href="#" onclick="showTab('xbox')">Xbox</a>
+    <a href="#" onclick="showTab('autres')">Autres</a>
+    <a href="#" onclick="showTab('outils')">Outils</a>
+    <a href="#" onclick="showTab('credits')">À propos</a>
+  </nav>
+
+  <div class="content">
+    <section id="gmod" class="active">
+      <h2>Garry's Mod</h2>
+      <p>Exemples : Résoudre un bug ULX, créer un addon simple, sauvegarder en JSON...</p>
+    </section>
+
+    <section id="xbox">
+      <h2>Xbox</h2>
+      <p>Exemples : Résoudre un problème de connexion, comprendre le Game Pass, etc.</p>
+    </section>
+
+    <section id="autres">
+      <h2>Autres Problèmes</h2>
+      <p>Exemples : Bugs Windows, logiciels, conseils logiciels gratuits, etc.</p>
+    </section>
+
+    <section id="outils">
+      <h2>Outils & Astuces</h2>
+      <p>Petits outils, recommandations d'apps, configs utiles.</p>
+    </section>
+
+    <section id="credits">
+      <h2>À propos</h2>
+      <p>Site créé par Aubin avec l'aide de ChatGPT. Libre à partager et compléter !</p>
+    </section>
+  </div>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
