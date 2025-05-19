@@ -2,21 +2,22 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solutions d'Aubin & GPT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solutions d'Aubin</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      color: white;
+      text-shadow: 0 0 5px #000;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
-      color: #fff;
+      transition: background-image 0.5s ease-in-out;
     }
     header {
       background: rgba(0, 0, 0, 0.7);
-      color: white;
       padding: 1rem;
       text-align: center;
     }
@@ -26,19 +27,25 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 1rem;
     }
     nav a {
       color: white;
-      margin: 0.5rem 1rem;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      user-select: none;
     }
     nav a:hover {
       text-decoration: underline;
     }
     .content {
-      padding: 2rem;
       background: rgba(0, 0, 0, 0.6);
+      margin: 1rem auto;
+      padding: 2rem;
+      max-width: 900px;
+      border-radius: 8px;
     }
     section {
       display: none;
@@ -50,39 +57,72 @@
       background: rgba(255, 255, 255, 0.2);
       padding: 1rem;
       overflow-x: auto;
-      color: #fff;
+      color: white;
+      border-radius: 4px;
     }
     ul li {
       margin-bottom: 1rem;
-    }
-    a {
-      color: #8cf;
+      line-height: 1.4;
     }
     .update-info {
       background: rgba(0,0,0,0.7);
-      padding: 1rem;
+      padding: 0.7rem;
       text-align: center;
       font-size: 0.9rem;
       color: #ccc;
+      user-select: none;
+    }
+    .bg-selector {
+      margin: 1rem auto;
+      max-width: 900px;
+      background: rgba(0,0,0,0.7);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .bg-selector label {
+      font-weight: bold;
+      margin-right: 0.5rem;
+      user-select: none;
+    }
+    select {
+      font-size: 1rem;
+      padding: 0.3rem 0.5rem;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Solutions d'Aubin & GPT</h1>
+    <h1>Solutions d'Aubin</h1>
     <p>Réponses et astuces sur GMod, Xbox, et plus</p>
   </header>
 
   <div class="update-info">
-    📅 Dernière mise à jour : 19 mai 2025 à 18:38
+    📅 Dernière mise à jour : 19 mai 2025 à 17h15
+  </div>
+
+  <div class="bg-selector">
+    <label for="backgroundSelect">Choisis un fond d'écran :</label>
+    <select id="backgroundSelect" aria-label="Sélection du fond d'écran">
+      <option value="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80">Forêt mystique 🌲</option>
+      <option value="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1470&q=80">Montagnes enneigées ❄️</option>
+      <option value="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1470&q=80">Plage au coucher de soleil 🌅</option>
+      <option value="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1470&q=80">Ville de nuit ✨</option>
+      <option value="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80">Désert et dunes 🏜️</option>
+    </select>
   </div>
 
   <nav>
-    <a href="#" onclick="showTab('gmod')">🔧 GMod</a>
-    <a href="#" onclick="showTab('xbox')">🎮 Xbox</a>
-    <a href="#" onclick="showTab('autres')">🛠️ Autres</a>
-    <a href="#" onclick="showTab('outils')">🧰 Outils</a>
-    <a href="#" onclick="showTab('credits')">ℹ️ À propos</a>
+    <a onclick="showTab('gmod')">🔧 GMod</a>
+    <a onclick="showTab('xbox')">🎮 Xbox</a>
+    <a onclick="showTab('autres')">🛠️ Autres</a>
+    <a onclick="showTab('outils')">🧰 Outils</a>
+    <a onclick="showTab('credits')">ℹ️ À propos</a>
   </nav>
 
   <div class="content">
@@ -109,18 +149,15 @@
       <h2>Xbox</h2>
       <ul>
         <li><strong>🌐 Problèmes de connexion Xbox Live</strong><br/>Redémarre ta box, puis va dans les paramètres réseau et utilise "Test de connexion" pour voir les erreurs exactes.</li>
-        <li><strong>🧾 Résilier un abonnement Game Pass</strong><br/>Va sur <a href="https://account.microsoft.com/services">account.microsoft.com/services</a> et clique sur "Gérer" à côté de l'abonnement.</li>
+        <li><strong>🧾 Résilier un abonnement Game Pass</strong><br/>Va sur <a href="https://account.microsoft.com/services" target="_blank" rel="noopener noreferrer" style="color:#8cf;">account.microsoft.com/services</a> et clique sur "Gérer" à côté de l'abonnement.</li>
         <li><strong>🎮 Partage de jeux entre comptes</strong><br/>Utilise la fonction "Xbox principale" pour partager tes jeux et abonnements avec un deuxième compte sur la même console.</li>
         <li><strong>🕹️ Manette non détectée</strong><br/>Vérifie les piles, réinitialise la manette (bouton à l’arrière), puis reconnecte-la via USB ou sans fil.</li>
-        <li><strong>🧹 Problèmes avec Gaming Services (Game Pass PC)</strong><br/>Si les jeux ne se lancent pas ou ne s’installent plus via le Microsoft Store ou le Xbox Game Pass, essayez de désinstaller et réinstaller "Gaming Services" :
+        <li><strong>🧹 Problèmes avec Gaming Services (Game Pass PC)</strong><br/>Si les jeux ne se lancent pas ou ne s’installent plus via le Microsoft Store ou le Xbox Game Pass, essayez de désinstaller et réinstaller "Gaming Services" (PowerShell en admin) :
           <pre>
-1. Ouvre PowerShell en administrateur
-2. Colle cette commande pour désinstaller Gaming Services :
-   get-appxpackage Microsoft.GamingServices | remove-AppxPackage -allusers
-3. Supprime la clé de registre :
-   remove-Item -Path "HKLM:\System\CurrentControlSet\Services\GamingServices" -Recurse
-4. Redémarre l’ordinateur
-5. Réinstalle Gaming Services via le Microsoft Store
+1. get-appxpackage Microsoft.GamingServices | remove-AppxPackage -allusers
+2. remove-Item -Path "HKLM:\System\CurrentControlSet\Services\GamingServices" -Recurse
+3. Redémarre l’ordinateur
+4. Réinstalle Gaming Services via le Microsoft Store
           </pre>
         </li>
       </ul>
@@ -139,47 +176,36 @@
     <section id="outils">
       <h2>Outils & Astuces</h2>
       <ul>
-        <li>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Microsoft_Clipchamp_logo.svg/24px-Microsoft_Clipchamp_logo.svg.png" alt="Clipchamp" style="vertical-align: middle; height: 24px; margin-right: 8px;">
-          <strong>Clipchamp gratuit</strong><br/>
-          Outil de montage vidéo simple et en ligne. Parfait pour YouTube sans watermark en 720p.
-        </li>
-        <li>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Notepad%2B%2B_logo.svg/24px-Notepad%2B%2B_logo.svg.png" alt="Notepad++" style="vertical-align: middle; height: 24px; margin-right: 8px;">
-          <strong>Notepad++</strong><br/>
-          Éditeur de code ultra léger, pratique pour modifier des fichiers <code>.lua</code> ou <code>.json</code>.
-        </li>
-        <li>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/OBS_Studio_Logo.svg/24px-OBS_Studio_Logo.svg.png" alt="OBS Studio" style="vertical-align: middle; height: 24px; margin-right: 8px;">
-          <strong>OBS Studio</strong><br/>
-          Logiciel gratuit pour enregistrer ou streamer. Très utile pour Twitch.
-        </li>
-        <li>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ShareX_Logo.svg/24px-ShareX_Logo.svg.png" alt="ShareX" style="vertical-align: middle; height: 24px; margin-right: 8px;">
-          <strong>ShareX</strong><br/>
-          Capture d'écran avancée, très utile pour documenter ses bugs ou créer des tutos.
-        </li>
-        <li>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/FileZilla_logo.svg/24px-FileZilla_logo.svg.png" alt="FileZilla" style="vertical-align: middle; height: 24px; margin-right: 8px;">
-          <strong>FileZilla</strong><br/>
-          Client FTP gratuit, indispensable pour transférer facilement ses fichiers vers un serveur.
-        </li>
+        <li>🧰 <strong>Clipchamp gratuit</strong> : Outil de montage vidéo simple et en ligne. Parfait pour YouTube sans watermark en 720p.</li>
+        <li>📄 <strong>Notepad++</strong> : Éditeur de code léger, idéal pour modifier des fichiers <code>.lua</code> ou <code>.json</code>.</li>
+        <li>🎥 <strong>OBS Studio</strong> : Logiciel gratuit pour enregistrer ou streamer, très utile pour Twitch.</li>
+        <li>📸 <strong>ShareX</strong> : Capture d'écran avancée pour documenter bugs ou créer des tutos.</li>
+        <li>📂 <strong>FileZilla</strong> : Client FTP gratuit pour transférer facilement des fichiers vers un serveur.</li>
       </ul>
     </section>
 
     <section id="credits">
       <h2>À propos</h2>
-      <p>Page créée par <strong>Aubin</strong>. Pour toute question, contacte-moi via Twitch ou Discord.</p>
+      <p>Page créée par Aubin Clem. Pour toute question, contacte-moi via Twitch ou Discord.</p>
     </section>
   </div>
 
   <script>
     function showTab(id) {
-      document.querySelectorAll('section').forEach(sec => {
-        sec.classList.remove('active');
-      });
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
+
+    // Gérer le changement de fond d'écran
+    const bgSelect = document.getElementById('backgroundSelect');
+    function updateBackground() {
+      document.body.style.backgroundImage = `url('${bgSelect.value}')`;
+    }
+    bgSelect.addEventListener('change', updateBackground);
+
+    // Initialiser avec le premier fond
+    updateBackground();
   </script>
+
 </body>
 </html>
