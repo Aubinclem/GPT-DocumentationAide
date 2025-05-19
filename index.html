@@ -65,11 +65,6 @@
       font-size: 0.9rem;
       color: #ccc;
     }
-    .tool-image {
-      max-width: 120px;
-      margin: 0.5rem 0;
-      display: block;
-    }
   </style>
 </head>
 <body>
@@ -79,7 +74,7 @@
   </header>
 
   <div class="update-info">
-    📅 Dernière mise à jour : 19 mai 2025 à 17h15
+    📅 Dernière mise à jour : 19 mai 2025 à 18:38
   </div>
 
   <nav>
@@ -104,9 +99,9 @@
 │       └── myaddon_init.lua
 └── addon.txt</pre>
         </li>
-        <li><strong>👮‍♂️ ULX ne fonctionne pas</strong><br/>Assurez-vous que le dossier `ulx` est dans `garrysmod/addons/` et que le fichier `ulx.lua` est bien lu.</li>
-        <li><strong>💾 Sauvegarde d'entités personnalisées</strong><br/>Vous pouvez utiliser `file.Write("entites.json", util.TableToJSON(entTable))` côté serveur pour enregistrer l'état de vos entités.</li>
-        <li><strong>🔐 Gérer les permissions d'outils</strong><br/>Utilisez `tool.Allow` dans un hook `PlayerGiveSWEP` pour restreindre les outils à certaines équipes.</li>
+        <li><strong>👮‍♂️ ULX ne fonctionne pas</strong><br/>Assurez-vous que le dossier <code>ulx</code> est dans <code>garrysmod/addons/</code> et que le fichier <code>ulx.lua</code> est bien lu.</li>
+        <li><strong>💾 Sauvegarde d'entités personnalisées</strong><br/>Vous pouvez utiliser <code>file.Write("entites.json", util.TableToJSON(entTable))</code> côté serveur pour enregistrer l'état de vos entités.</li>
+        <li><strong>🔐 Gérer les permissions d'outils</strong><br/>Utilisez <code>tool.Allow</code> dans un hook <code>PlayerGiveSWEP</code> pour restreindre les outils à certaines équipes.</li>
       </ul>
     </section>
 
@@ -117,16 +112,16 @@
         <li><strong>🧾 Résilier un abonnement Game Pass</strong><br/>Va sur <a href="https://account.microsoft.com/services">account.microsoft.com/services</a> et clique sur "Gérer" à côté de l'abonnement.</li>
         <li><strong>🎮 Partage de jeux entre comptes</strong><br/>Utilise la fonction "Xbox principale" pour partager tes jeux et abonnements avec un deuxième compte sur la même console.</li>
         <li><strong>🕹️ Manette non détectée</strong><br/>Vérifie les piles, réinitialise la manette (bouton à l’arrière), puis reconnecte-la via USB ou sans fil.</li>
-        <li><strong>🧹 Problèmes avec Gaming Services (Game Pass PC)</strong><br/>Si les jeux ne se lancent pas ou ne s’installent plus via le Microsoft Store ou le Xbox Game Pass :
-          <ol>
-            <li>Désinstalle "Gaming Services" :</li>
-            <li>Ouvre PowerShell en administrateur</li>
-            <li>Commande : <code>get-appxpackage Microsoft.GamingServices | remove-AppxPackage -allusers</code></li>
-            <li>Supprime la clé de registre : <code>remove-Item -Path "HKLM:\System\CurrentControlSet\Services\GamingServices" -Recurse</code></li>
-            <li>Redémarre le PC</li>
-            <li>Réinstalle Gaming Services via Microsoft Store</li>
-            <li>Réinitialise aussi le Microsoft Store si nécessaire (via wsreset.exe)</li>
-          </ol>
+        <li><strong>🧹 Problèmes avec Gaming Services (Game Pass PC)</strong><br/>Si les jeux ne se lancent pas ou ne s’installent plus via le Microsoft Store ou le Xbox Game Pass, essayez de désinstaller et réinstaller "Gaming Services" :
+          <pre>
+1. Ouvre PowerShell en administrateur
+2. Colle cette commande pour désinstaller Gaming Services :
+   get-appxpackage Microsoft.GamingServices | remove-AppxPackage -allusers
+3. Supprime la clé de registre :
+   remove-Item -Path "HKLM:\System\CurrentControlSet\Services\GamingServices" -Recurse
+4. Redémarre l’ordinateur
+5. Réinstalle Gaming Services via le Microsoft Store
+          </pre>
         </li>
       </ul>
     </section>
@@ -144,43 +139,45 @@
     <section id="outils">
       <h2>Outils & Astuces</h2>
       <ul>
-        <li><strong>📹 Clipchamp gratuit</strong><br/>Outil de montage vidéo simple et en ligne. Parfait pour YouTube sans watermark en 720p.<br/>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Clipchamp_logo.png" alt="Clipchamp Logo" class="tool-image"/>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Microsoft_Clipchamp_logo.svg/24px-Microsoft_Clipchamp_logo.svg.png" alt="Clipchamp" style="vertical-align: middle; height: 24px; margin-right: 8px;">
+          <strong>Clipchamp gratuit</strong><br/>
+          Outil de montage vidéo simple et en ligne. Parfait pour YouTube sans watermark en 720p.
         </li>
-        <li><strong>🧪 Notepad++</strong><br/>Éditeur de code ultra léger, pratique pour modifier des fichiers `.lua` ou `.json`.<br/>
-          <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Notepad++_logo.png" alt="Notepad++ Logo" class="tool-image"/>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Notepad%2B%2B_logo.svg/24px-Notepad%2B%2B_logo.svg.png" alt="Notepad++" style="vertical-align: middle; height: 24px; margin-right: 8px;">
+          <strong>Notepad++</strong><br/>
+          Éditeur de code ultra léger, pratique pour modifier des fichiers <code>.lua</code> ou <code>.json</code>.
         </li>
-        <li><strong>🌐 OBS Studio</strong><br/>Logiciel gratuit pour enregistrer ou streamer. Très utile pour Twitch.<br/>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/OBS_Studio_Logo.svg" alt="OBS Studio Logo" class="tool-image"/>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/OBS_Studio_Logo.svg/24px-OBS_Studio_Logo.svg.png" alt="OBS Studio" style="vertical-align: middle; height: 24px; margin-right: 8px;">
+          <strong>OBS Studio</strong><br/>
+          Logiciel gratuit pour enregistrer ou streamer. Très utile pour Twitch.
         </li>
-        <li><strong>🔤 ShareX</strong><br/>Capture d'écran avancée, très utile pour documenter ses bugs ou créer des tutos.<br/>
-          <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/ShareX_Logo.png" alt="ShareX Logo" class="tool-image"/>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ShareX_Logo.svg/24px-ShareX_Logo.svg.png" alt="ShareX" style="vertical-align: middle; height: 24px; margin-right: 8px;">
+          <strong>ShareX</strong><br/>
+          Capture d'écran avancée, très utile pour documenter ses bugs ou créer des tutos.
         </li>
-        <li><strong>📂 FileZilla</strong><br/>Client FTP pour gérer les fichiers de ton serveur (pratique pour GMod).<br/>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/FileZilla_logo.png/600px-FileZilla_logo.png" alt="FileZilla Logo" class="tool-image"/>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/FileZilla_logo.svg/24px-FileZilla_logo.svg.png" alt="FileZilla" style="vertical-align: middle; height: 24px; margin-right: 8px;">
+          <strong>FileZilla</strong><br/>
+          Client FTP gratuit, indispensable pour transférer facilement ses fichiers vers un serveur.
         </li>
       </ul>
     </section>
 
     <section id="credits">
-      <h2>ℹ️ À propos</h2>
-      <p>Ce site est maintenu par <strong>Aubin</strong>. Il compile des solutions pratiques données avec l'aide de <strong>ChatGPT</strong>, une IA développée par OpenAI. N'hésitez pas à réutiliser ou partager le contenu !</p>
+      <h2>À propos</h2>
+      <p>Page créée par <strong>Aubin</strong>. Pour toute question, contacte-moi via Twitch ou Discord.</p>
     </section>
   </div>
 
   <script>
-    const backgrounds = [
-      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1950&q=80',
-      'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1950&q=80',
-      'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1950&q=80',
-      'https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80',
-      'https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1950&q=80'
-    ];
-
-    document.body.style.backgroundImage = `url('${backgrounds[Math.floor(Math.random() * backgrounds.length)]}')`;
-
     function showTab(id) {
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('active');
+      });
       document.getElementById(id).classList.add('active');
     }
   </script>
